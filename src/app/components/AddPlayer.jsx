@@ -34,6 +34,7 @@ export default function AddPlayers(){
             })
             const data = await res.json()
             console.log(data.message)
+            alert("Player Added Successfully")
         }catch(error){
             console.error(error.message)
         }
@@ -48,6 +49,7 @@ export default function AddPlayers(){
             })
             const data = await res.json()
             console.log(data.message)
+            alert("Player Added Successfully")
         }catch(error){
             console.error(error.message)
         }
