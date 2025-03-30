@@ -59,21 +59,41 @@ export default function AddPlayers(){
     return(
         <div className="flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center mt-5">
-                <h1 className="text-2xl font-bold text-green-600">Team Selection</h1><br></br>
-                <ul className="h-80 flex flex-col p-4 w-100">
-                    {players.map((player) =>(
-                        <li key = { player._id } className=" flex gap-5 border-1 border-green-600 p-3 text-green-600">
-                            <h1 className="grow-6 w-30">{player.name}</h1>
-                            <button onClick={()=>teamAPlayers({id : player._id})} className="grow-2 p-2 border-1 border-green-600 text-green-600 font-semibold hover:bg-green-600 hover:text-white">Team A</button>
-                            <button onClick={()=>teamBPlayers({id : player._id})} className="grow-2 p-2 border-1 border-green-600 text-green-600 font-semibold hover:bg-green-600 hover:text-white">Team B</button>
+                <h1 className="text-2xl font-bold text-green-600">Team Selection</h1>
+                <br />
+                <ul className="h-80 w-full p-4 overflow-y-scroll border border-green-600">
+                    {players.map((player) => (
+                        <li
+                            key={player._id}
+                            className="flex gap-5 p-3 border-b border-green-600 text-green-600"
+                        >
+                            <h1 className="w-30 flex-grow">{player.name}</h1>
+                            <button
+                                onClick={() => teamAPlayers({ id: player._id })}
+                                className="p-2 border border-green-600 text-green-600 font-semibold hover:bg-green-600 hover:text-white"
+                            >
+                                Team A
+                            </button>
+                            <button
+                                onClick={() => teamBPlayers({ id: player._id })}
+                                className="p-2 border border-green-600 text-green-600 font-semibold hover:bg-green-600 hover:text-white"
+                            >
+                                Team B
+                            </button>
                         </li>
                     ))}
                 </ul>
             </div>
             <div className="w-full p-4">
-                <button onClick={MatchDetailsPage} className="p-2 border-1 border-green-600 text-green-600 font-semibold hover:bg-green-600 hover:text-white">Save</button>
+                <button
+                    onClick={MatchDetailsPage}
+                    className="p-2 border border-green-600 text-green-600 font-semibold hover:bg-green-600 hover:text-white"
+                >
+                    Save
+                </button>
             </div>
         </div>
+
         
     )
 }
